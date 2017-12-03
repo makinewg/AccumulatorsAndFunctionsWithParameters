@@ -10,8 +10,8 @@ import rosegraphics as rg
 
 def main():
     """ Calls the   TEST   functions in this module. """
-    run_test_draw_circles()
-    run_test_better_draw_circles()
+    #run_test_draw_circles()
+    #run_test_better_draw_circles()
     run_test_even_better_draw_circles()
     # Un-comment the next lines when you are ready to use them.
     # run_test_better_draw_circles()
@@ -117,7 +117,7 @@ def better_draw_circles(n):
 
 
 # ----------------------------------------------------------------------
-# TODO: 3.
+# DONE: 3.
 #   In the previous exercise, you made a MORE POWERFUL version
 #   of draw_circles by introducing a PARAMETER for the amount by
 #   which the radii of the concentric circles increase.
@@ -151,14 +151,16 @@ def run_test_even_better_draw_circles():
     print('--------------------------------------------------')
     print('Testing  better_draw_circles:  See graphics window')
     print('--------------------------------------------------')
-    better_draw_circles(5, 50, 400)
 
-def even_better_draw_circles(n, j, l):
+    even_better_draw_circles(5,50,500) #n = 5, j = 50, l = 500
 
-    window = rg.RoseWindow(l, l)
 
-    center = rg.Point((l/2), (l/2))
-    for k in range(j):
+def even_better_draw_circles(n,j,l):
+
+    window = rg.RoseWindow(l, l) #l variable sets a Rose Window to an l*l square
+
+    center = rg.Point((l/2), (l/2))#sets center of the circles to the center of the Rose Window
+    for k in range(j): #j is the number of circles drawn
         circle = rg.Circle(center, n * k)
         circle.attach_to(window)
         window.render(0.05)  # Pauses for 0.05 seconds after rendering.
